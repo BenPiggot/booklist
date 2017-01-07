@@ -10,7 +10,8 @@
               <strong><%= book.name %> </strong>
             </a>
             <span>By <%= book.author %></span>
-            <%= link_to "Delete", book_path(book), :method => :delete, class: "ink-button red"%>
+            <%= link_to "Delete", book_path(book), :method => :delete, class: "ink-button red", 
+            :data => {:confirm => 'Are you sure?'}%>
           </div>
         </li>
       <% end %>
