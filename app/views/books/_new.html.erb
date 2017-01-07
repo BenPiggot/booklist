@@ -1,0 +1,25 @@
+<%= form_for :book, :method => :post, :html => {class: 'ink-form'} do |b| %>
+  <div class="column-group">
+    <div class="control-group">
+      <%= b.text_field :name, :placeholder =>"Title", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= b.text_field :author, :placeholder =>"Author", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= b.text_area :description, :placeholder =>"Description", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= b.text_field :category, :placeholder =>"Genre", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= b.text_field :isbn, :placeholder =>"ISBN", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= b.text_field :image, :placeholder =>"Image URL", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= b.submit "Add", class: "ink-button blue all-20" %>
+    </div>
+  </div>
+<% end %>
