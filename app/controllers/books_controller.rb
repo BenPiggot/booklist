@@ -21,7 +21,8 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.create(book_params)
+    binding.pry
+    @book = current_user.books.create(book_params)
     redirect_to books_path
   end
 
@@ -40,6 +41,5 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:name, :author, :description, :topic, :isbn, :image)
   end
-
 
 end

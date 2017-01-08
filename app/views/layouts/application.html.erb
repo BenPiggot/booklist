@@ -18,9 +18,7 @@
         <li><a href="/logout">Logout</a></li>
       <% end %>
       <% if @current_user %>
-        <li><a href=""><%= @current_user.username %></a></li>
-      <% else %>
-        <li><a href='#' id="login">Log In</a></li>
+        <li class="navbar-username"><a href="#"><%= @current_user.username %></a></li>
       <% end %>
     </ul>
   </nav>
@@ -31,7 +29,7 @@
 
   <script>
     Ink.requireModules(['Ink.UI.Close_1'], function (Close) {
-        new Close();  // That was close
+        new Close();  
     });
   </script>
 
