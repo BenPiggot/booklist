@@ -21,7 +21,6 @@ class BooksController < ApplicationController
   end
 
   def create
-    binding.pry
     @book = current_user.books.create(book_params)
     redirect_to books_path
   end

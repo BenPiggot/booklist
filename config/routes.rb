@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :books 
+  resources :lists
 
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
