@@ -2,9 +2,56 @@
   <div class="column-group">
     <div class="all-50 book-container">
       <h1>Welcome to Booklist</h1>
-
+      <a href='#' id="signup" class="ink-button blue">Sign Up</a>
+      <a href='#' id="login" class="ink-button blue">Log In</a>
     </div>
     <div class="all-50">
     </div>
   </div>
 </div>
+
+  <div class="ink-shade fade">
+    <div id="myModal" class="ink-modal fade" data-trigger="#login" data-width="80%" data-height="80%" role="dialog" aria-hidden="true" aria-labelled-by="modal-title">
+      <div class="modal-header">
+        <button class="modal-close ink-dismiss"></button>
+        <h2 id="modal-title">Log In</h2>
+      </div>
+      <div class="modal-body" id="modalContent">
+        <%= render "login" %>
+      </div>
+      <div class="modal-footer">
+        <div class="push-right">
+          <button class="ink-button caution ink-dismiss">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ink-shade fade">
+    <div id="myModal2" class="ink-modal fade" data-trigger="#signup" data-width="80%" data-height="80%" role="dialog" aria-hidden="true" aria-labelled-by="modal-title">
+      <div class="modal-header">
+        <button class="modal-close ink-dismiss"></button>
+        <h2 id="modal-title2">Create Your Profile</h2>
+      </div>
+      <div class="modal-body" id="modalContent2">
+        <%= render "signup" %>
+      </div>
+      <div class="modal-footer">
+        <div class="push-right">
+          <button class="ink-button caution ink-dismiss">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    Ink.requireModules( ['Ink.Dom.Selector_1','Ink.UI.Modal_1'], function( Selector, Modal ){
+        var modalElement = Ink.s('#myModal');
+        var modalObj = new Modal( modalElement );
+    });
+
+    Ink.requireModules( ['Ink.Dom.Selector_1','Ink.UI.Modal_1'], function( Selector, Modal ){
+        var modalElement = Ink.s('#myModal2');
+        var modalObj = new Modal( modalElement );
+    });
+  </script>

@@ -1,0 +1,13 @@
+<%= form_for :user, :method => :post, :url => '/login', :html => {class: 'ink-form'} do |u| %>
+  <div class="column-group">
+    <div class="control-group all-100">
+      <%= u.text_field :email, :placeholder =>"Email", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= u.text_field :password, :placeholder =>"Password", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= u.submit "Create Profile", class: "ink-button blue all-20" %>
+    </div>
+  </div>
+<% end %>

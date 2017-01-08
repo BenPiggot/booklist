@@ -1,0 +1,22 @@
+<%= form_for :user, :method => :post, :url => '/signup', :html => {class: 'ink-form'} do |u| %>
+  <div class="column-group">
+    <div class="control-group">
+      <%= u.text_field :name, :placeholder =>"Name", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= u.text_field :email, :placeholder =>"Email", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= u.text_field :username, :placeholder =>"Username", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= u.text_field :password, :type => 'password', :placeholder =>"Password", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= u.text_field :password_confirmation, :type => 'password', :placeholder =>"Confirm Password", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= u.submit "Create Profile", class: "ink-button blue all-20" %>
+    </div>
+  </div>
+<% end %>

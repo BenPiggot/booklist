@@ -1,0 +1,10 @@
+<% flash.each do |k, v| %>
+
+  <div class="ink-grid">
+    <div class="ink-alert basic <%= k %>" role="alert">
+      <button class="ink-dismiss">&times;</button>
+      <p> <%= v %></p>
+    </div>
+  </div>
+  
+<% end %>
