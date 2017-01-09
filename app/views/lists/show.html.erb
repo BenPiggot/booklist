@@ -1,0 +1,32 @@
+<div class="ink-grid book-container">
+  <h2><%= @list.name %></h2>
+  <div class="edit-button">
+    <%= link_to "Add a Book",new_list_book_path(@list), :class => "ink-button blue", :data => {toggle: 'modal', target: '#addBook'} %>
+  </div>
+</div>
+
+
+  <div class="ink-shade fade">
+    <div id="myModal" class="ink-modal fade" data-trigger="#addBook" data-width="80%" data-height="80%" role="dialog" aria-hidden="true" aria-labelled-by="modal-title">
+        <div class="modal-header">
+          <button class="modal-close ink-dismiss"></button>
+          <h2 id="modal-title">Edit Book</h2>
+        </div>
+        <div class="modal-body" id="modalContent">
+          <%= render "new" %>
+        </div>
+        <div class="modal-footer">
+          <div class="push-right">
+            <button class="ink-button caution ink-dismiss">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    Ink.requireModules( ['Ink.Dom.Selector_1','Ink.UI.Modal_1'], function( Selector, Modal ){
+      var modalElement = Ink.s('#myModal');
+      var modalObj = new Modal( modalElement );
+    });
+  </script>

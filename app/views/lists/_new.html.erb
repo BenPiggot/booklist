@@ -1,0 +1,10 @@
+<%= form_for :list, :method => :post, :html => {class: 'ink-form'} do |b| %>
+  <div class="column-group">
+    <div class="control-group">
+      <%= b.text_field :name, :placeholder =>"List Name", class: "all-60" %>
+    </div>
+    <div class="control-group all-100">
+      <%= b.submit "Add", class: "ink-button blue all-20" %>
+    </div>
+  </div>
+<% end %>
