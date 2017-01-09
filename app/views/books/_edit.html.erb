@@ -1,4 +1,4 @@
-<%= form_for @book, :method => :put, :html => {class: 'ink-form'} do |b| %>
+<%= form_for list_book_path, :method => :put, :html => {class: 'ink-form'} do |b| %>
   <div class="column-group">
     <div class="control-group">
       <%= b.text_field :name, :placeholder =>"Title", class: "all-60" %>

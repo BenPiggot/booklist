@@ -1,0 +1,15 @@
+.list-item {
+  display: flex;
+  align-items: baseline;
+}
+
+.ink-button.red, .ink-button.red:hover {
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+  margin-left: 5px;
+  padding: 5px;
+  color: #c91111;
+  background: #fff;
+  border: none;
+}

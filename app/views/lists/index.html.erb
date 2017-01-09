@@ -1,15 +1,15 @@
-<div class="ink-grid">
-  <h1>Books</h1>
+<div class="ink-grid book-container">
+  <h1>My Book Lists</h1>
 
   <% @lists.each do |list| %>
     <ul class="unstyled">
       <% if list.name? %>
         <li >
-          <div>
+          <div class="list-item">
             <a href="/lists/<%= list.id %>">
               <strong><%= list.name %> </strong>
             </a>
-            <%= link_to "Delete", list_path(list), :method => :delete, class: "ink-button red", 
+            <%= link_to "", list_path(list), :method => :delete, class: "ink-button red fa fa-trash", 
             :data => {:confirm => 'Are you sure?'}%>
           </div>
         </li>
@@ -17,8 +17,7 @@
     </ul>
   <% end %>
 
-  <a href="#" id="addNewList" class="ink-button blue">Create a New Book</a>
-  <a href="/lists" class="ink-button orange">Your Lists</a>
+  <a href="#" id="addNewList" class="ink-button blue">Create a List</a>
 </div>
 
   <div class="ink-shade fade">
@@ -28,7 +27,7 @@
         <h2 id="modal-title">Create a List</h2>
       </div>
       <div class="modal-body" id="modalContent">
-        <%= render "books/new" %>
+        <%= render "new" %>
       </div>
       <div class="modal-footer">
         <div class="push-right">

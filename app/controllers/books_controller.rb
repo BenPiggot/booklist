@@ -6,7 +6,6 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    render layout: false
   end
 
   def edit
@@ -21,8 +20,9 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = current_user.books.create(book_params)
-    redirect_to books_path
+    @list = current_user.lists.find_by_id(params[:list_id].to_i)
+    @list.books.create(book_params)
+    redirect_to list_books_path
   end
 
   def show 
@@ -32,7 +32,7 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to books_path
+    redirect_to list_books_path
   end
 
   private
