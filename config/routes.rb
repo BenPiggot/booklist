@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :books
   end
 
+  resources :tags
+
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
